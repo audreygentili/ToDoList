@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="container color-dark">
+    <div class="col">
+        <p>Un élément de liste</p>
+    </div>
+    <div class="col">
+        <p>Ma liste d'éléments ({{nbItems}})</p>
+    </div>
+</div>
+<div class="container color-light">
+    <div class="col">
+        <p class="sm">Un nouvel élément de liste</p>
+        <input type="text" id="txt" class="txt" placeholder="..." [(ngModel)]="objectifText" />
+        <p>{{objectifText}}</p>
+        <input type="submit" id="btn" class="btn" [value]="btnText" onclick="ajoutItem(objectifText)"/>
+    </div>
+    <div class="col">
+        <div class="life-container"></div>
+        <p>Je suis en cours d'Angular</p>
+    </div>
+</div>
+    
+
