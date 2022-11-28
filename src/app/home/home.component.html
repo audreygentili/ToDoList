@@ -6,16 +6,17 @@
         <p>Ma liste d'éléments ({{nbItems}})</p>
     </div>
 </div>
-<div class="container color-light">
+<div class="container color-light" [@animobjectifs]="objectifs.length">
     <div class="col">
         <p class="sm">Un nouvel élément de liste</p>
-        <input type="text" id="txt" class="txt" placeholder="..." [(ngModel)]="objectifText" />
-        <p>{{objectifText}}</p>
-        <input type="submit" id="btn" class="btn" [value]="btnText" onclick="ajoutItem(objectifText)"/>
+        <form>
+            <input type="text" id="txt" name="txt" class="txt" placeholder="..." [(ngModel)]="objectifText" />
+            <input type="submit" id="btn" name="btn" class="btn" (click)="ajoutItem()" [value]="btnText" />
+            <button id="btne" name="btne" class="btnE" (click)="effacerItem()">Vider la liste</button>
+        </form>      
     </div>
     <div class="col">
-        <div class="life-container"></div>
-        <p>Je suis en cours d'Angular</p>
+        <p class="life-container" *ngFor="let obj of objectifs">{{obj}}</p>
     </div>
 </div>
     

@@ -1,10 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; 
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+
+  animations : [ trigger('animobjectifs' ,[
+    transition ( '*=>*' ,[
+      query(':enter', style({opacity: 0}), {optional: true}),
+      query(':enter', stagger('300ms',[ animate ( '.5s ease-in' , keyframes ([
+      style({opacity: 0, transform: 'translateY(-75%)', offset: 0, backgroundColor: '#E6E6FA'}), style({opacity: .5, transform: 'translateY(35px)', offset: .3, backgroundColor: '#DDA0DD'}),
+      style({opacity: 1, transform: 'translateY(0)', offset: 1, backgroundColor: '#800080'}, ), ]))]),{optional: true})
+    ]) ])]
 })
 export class HomeComponent implements OnInit {
   nbItems = 4;
@@ -20,10 +29,14 @@ export class HomeComponent implements OnInit {
     this.nbItems = this.objectifs.length;
   }
 
-  ajoutItem(elt: String) {
-    this.objectifs.push(elt);
+  ajoutItem() {
+    this.objectifs.push(this.objectifText);
     console.log(this.objectifs);
     this.nbItems++;
   }
 
+  effacerItem() {
+    this.objectifs = [];
+    this.nbItems = 0;;
+  }
 }
