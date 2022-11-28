@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
   objectifText = new String("");
   objectifs = new Array();
 
-  constructor(private route: ActivatedRoute) { 
-    //this.monParam = route.snapshot.params['id'];
+  constructor(private monRouteur: Router) { 
   }
 
   ngOnInit(): void {
@@ -31,8 +30,8 @@ export class HomeComponent implements OnInit {
 
   ajoutItem() {
     this.objectifs.push(this.objectifText);
-    console.log(this.objectifs);
     this.nbItems++;
+    setTimeout(() => {this.monRouteur.navigateByUrl("about")}, 5000);
   }
 
   effacerItem() {

@@ -10,8 +10,8 @@
     <div class="col">
         <p class="sm">Un nouvel élément de liste</p>
         <form>
-            <input type="text" id="txt" name="txt" class="txt" placeholder="..." [(ngModel)]="objectifText" />
-            <input type="submit" id="btn" name="btn" class="btn" (click)="ajoutItem()" [value]="btnText" />
+            <input type="text" id="txt" name="txt" class="txt" [(ngModel)]="objectifText" />
+            <input [ngClass]="{'btnOk': objectifText !='', 'btn': objectifText == ''}" type="submit" id="btn" name="btn" class="btn" (click)="ajoutItem()" [value]="btnText" />
             <button id="btne" name="btne" class="btnE" (click)="effacerItem()">Vider la liste</button>
         </form>      
     </div>

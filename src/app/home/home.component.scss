@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: 50% auto; 
+    grid-template-columns: 50% auto;
 }
 
 .col {
@@ -11,7 +11,7 @@
     background: #e078ff;
 }
 .color-light {
-    background: #771195,
+    background: #771195;
 }
 
 input.txt{
@@ -25,8 +25,18 @@ input.btn{
     border: 0;
     display: block;
     padding: 1em 3em;
-    background: rgba(255, 255, 255, 0.726);
-    color: rgb(0, 0, 0); 
+    background: rgba(220, 21, 21, 0.726); 
+    color: rgb(255, 255, 255); 
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+input.btnOk{
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: rgba(7, 128, 33, 0.726);
+    color: rgb(255, 255, 255); 
     margin-bottom: 1em;
     cursor: pointer;
 }
