@@ -6,7 +6,7 @@
         <p>Ma liste d'éléments ({{nbItems}})</p>
     </div>
 </div>
-<div class="container color-light" [@animobjectifs]="objectifs.length">
+<div class="container color-light" [@animobjectifs]="activiteService.objectifs.length">
     <div class="col">
         <p class="sm">Un nouvel élément de liste</p>
         <form>
@@ -16,7 +16,7 @@
         </form>      
     </div>
     <div class="col">
-        <p class="life-container" *ngFor="let obj of objectifs">{{obj}}</p>
+        <p class="life-container" *ngFor="let obj of activiteService.objectifs;let i = index" (click)="consultItem(i)">{{obj}}</p>
     </div>
 </div>
     

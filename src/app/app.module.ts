@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsultActiviteComponent } from './consult-activite/consult-activite.component';
+import { ActiviteService } from './services/activite.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ConsultActiviteComponent } from './consult-activite/consult-activite.co
     FormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ActiviteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

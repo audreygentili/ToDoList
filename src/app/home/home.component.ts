@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations'; 
 import { Router } from '@angular/router';
+import { ActiviteService } from '../services/activite.service';
 
 @Component({
   selector: 'app-home',
@@ -16,26 +17,28 @@ import { Router } from '@angular/router';
     ]) ])]
 })
 export class HomeComponent implements OnInit {
-  nbItems = 4;
+  @Input() nbItems = 4;
   btnText = new String("Ajouter un élément");
   objectifText = new String("");
-  objectifs = new Array();
 
-  constructor(private monRouteur: Router) { 
+  constructor(private monRouteur: Router, public activiteService: ActiviteService) { 
   }
 
   ngOnInit(): void {
-    this.nbItems = this.objectifs.length;
+    this.nbItems = this.activiteService.objectifs.length;
   }
 
   ajoutItem() {
-    this.objectifs.push(this.objectifText);
+    this.activiteService.objectifs.push(this.objectifText);
     this.nbItems++;
-    setTimeout(() => {this.monRouteur.navigateByUrl("about")}, 5000);
   }
 
   effacerItem() {
-    this.objectifs = [];
+    this.activiteService.objectifs = [];
     this.nbItems = 0;;
+  }
+
+  consultItem(id: number) {
+    setTimeout(() => {this.monRouteur.navigateByUrl("consultAct/"+String(id))}, 500);
   }
 }

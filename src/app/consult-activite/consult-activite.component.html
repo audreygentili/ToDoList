@@ -1,1 +1,23 @@
-<p>consult-activite works!</p>
+<div class="container color-dark">
+    <div class="col">
+        <p>Détail de l'activité</p>
+    </div>
+</div>
+<div class="container color-light">
+    <div class="col">
+        <ol>
+            <li>Nom de l'activité : 
+                <form>
+                    <input type="text" id="txt" name="txt" class="txt" [(ngModel)]="activiteService.objectifs[param1]" />
+                    <button id="btne" name="btne" class="btnE" (click)="removeElt(param1)">Supprimer</button>
+                    <input type="submit" id="btn" name="btn" class="btnE" (click)="updateElt(activiteService.objectifs[param1], param1)" value="Sauvegarder" />
+                </form>
+            </li>                
+        </ol>
+        <!--
+            <li *ngIf="param2!=''">Paramètre 2 : {{param2}}</li>
+        -->   
+    </div>
+</div>
+
+

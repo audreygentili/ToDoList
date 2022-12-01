@@ -1,1 +1,15 @@
-<p>about works!</p>
+<div class="container color-dark">
+    <div class="col">
+        <p>Liste des items</p>
+    </div>
+</div>
+<div class="container color-light">
+    <div class="col">
+        <ol>
+            <li *ngFor="let obj of activiteService.objectifs">{{obj}}</li>
+        </ol>     
+    </div>
+</div>
+
+
+

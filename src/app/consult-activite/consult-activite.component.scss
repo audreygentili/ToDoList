@@ -1,0 +1,71 @@
+.container {
+    display: grid;
+    grid-template-columns: 50% auto;
+}
+
+.col {
+    padding: .4em 1.3em;
+}
+
+.color-dark {
+    background: #e078ff;
+}
+.color-light {
+    background: #771195;
+}
+
+input.txt{
+    border: 0;
+    padding: 1em;
+    width: 80%;
+    margin-bottom: 2em;
+}
+
+input.btn{
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: rgba(220, 21, 21, 0.726); 
+    color: rgb(255, 255, 255); 
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+input.btnE{
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: rgba(255, 255, 255, 0.726);
+    color: rgb(0, 0, 0); 
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+input.btnOk{
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: rgba(7, 128, 33, 0.726);
+    color: rgb(255, 255, 255); 
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+button.btnE{
+    border: 0;
+    display: block;
+    padding: 1em 3em;
+    background: rgba(255, 255, 255, 0.726);
+    color: rgb(0, 0, 0); 
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.life-container{
+    background: #e49ff9;
+    padding: .5em;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+

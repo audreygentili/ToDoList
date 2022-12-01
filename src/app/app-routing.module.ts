@@ -7,7 +7,7 @@ import { ConsultActiviteComponent } from './consult-activite/consult-activite.co
 const routes: Routes = [{path: '', component: HomeComponent},
                         {path: 'about', component: AboutComponent},
                         {path: 'index2.html', component: HomeComponent},
-                        {path: 'consultAct', component: ConsultActiviteComponent}];
+                        {path: 'consultAct/:id', component: ConsultActiviteComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
